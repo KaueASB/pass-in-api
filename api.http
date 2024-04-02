@@ -1,0 +1,18 @@
+POST  http://localhost:3333/events
+Content-Type: application/json
+
+{
+  "title": "Event two",
+  "details": null,
+  "maximumAttendees": 1
+}
+
+###
+
+POST http://localhost:3333/events/23873794-5baa-40e7-8adf-5c7b70ad8998/attendees
+Content-Type: application/json
+
+{
+  "name": "Kaue Alves",
+  "email": "email2@example.com"
+}

@@ -15,7 +15,7 @@ export async function createEvent(app: FastifyInstance) {
           maximumAttendees: z.number().int().positive().nullable(),
         }),
         response: {
-          200: z.object({
+          201: z.object({
             eventId: z.string(),
           }),
           409: z.object({
