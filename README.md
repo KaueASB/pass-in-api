@@ -5,6 +5,22 @@ A ferramenta permite que o organizador cadastre um evento e abra uma página pú
 Os participantes inscritos podem emitir uma credencial para check-in no dia do evento.
 O sistema fará um scan da credencial do participante para permitir a entrada no evento.
 
+## Tecnologias
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Fastify](https://fastify.dev/)
+- [Prisma](https://www.prisma.io/)
+- [Zod](https://zod.dev)
+- [Swagger](https://swagger.io/)
+
+### Executando a aplicação localmente
+
+- Clone este repositório
+- Execute `npm install` para instalar as dependências
+- Execute `npm run dev` para iniciar o servidor local
+- Execute `npm run db:migrate` para rodar as migrations no banco de dados
+- Acesse `http://localhost:3333/docs` para ver a documentação interativa
+
 ## Requisitos
 
 ### Requisitos funcionais
