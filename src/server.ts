@@ -1,4 +1,5 @@
 import fastify from 'fastify'
+import fastifyCors from '@fastify/cors'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUi from '@fastify/swagger-ui'
 
@@ -6,6 +7,7 @@ import {
   serializerCompiler,
   validatorCompiler,
   jsonSchemaTransform,
+  ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
 import { createEvent } from './routes/create-event'
@@ -16,7 +18,11 @@ import { checkIn } from './routes/check-in'
 import { getEventAttendees } from './routes/get-event-attendees'
 import { errorHandler } from './error-Handler'
 
-const app = fastify()
+const app = fastify().withTypeProvider<ZodTypeProvider>()
+
+app.register(fastifyCors, {
+  origin: '*',
+})
 
 app.register(fastifySwagger, {
   swagger: {
@@ -48,10 +54,6 @@ app.register(getEventAttendees)
 
 app.setErrorHandler(errorHandler)
 
-app
-  .listen({
-    port: 3333,
-  })
-  .then(() => {
-    console.log('Server is running on port 3333')
-  })
+app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
+  console.log('Server is running on port 3333')
+})
