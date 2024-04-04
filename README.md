@@ -49,11 +49,11 @@ Para documentação da API, acesse o link: `http://localhost:3333/docs`
 
 Nessa aplicação foi utilizado banco de dados relacional (SQL). Para ambiente de desenvolvimento adotei o SQLite pela facilidade do ambiente.
 
-<!-- ### Diagrama ERD
+### Diagrama ERD
 
-<img src=".github/erd.svg" width="600" alt="Diagrama ERD do banco de dados" />
+![ERD](.github/erd.svg)
 
-### Estrutura do banco (SQL)
+<!-- ### Estrutura do banco (SQL)
 
 ```sql
 -- CreateTable
